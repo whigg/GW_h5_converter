@@ -5,24 +5,27 @@ To use, place converter.py and a properly formatted version of metadata.txt in t
 
 The process implemented for converting gravitational wave simulations into HDF5 files is heavily dependent upon the proper formatting of a "metadata.txt" file, which stores important information about the gravitational wave to be converted. Metadata.txt is imported and turned into code when coverter.py is run, so its careful formatting is crucial. A sample metadata.txt file is attached within this repository; further details regarding formatting will be discussed in this README file. Using the two in conjunction for reference should lead to a properly formatted file. 
 
-## Style Guide ##
+## Style Guide
 
 Since the metadata file will be read in as code, the file should contain data in the standard variable/value format. 
->  Ex: 
-
->    variableText   = "text"
-
->    variableInt    = 11
-
->    variableFloat  = 1.0
-    
+```
+  Ex: 
+    variableText   = "text"
+    variableInt    = 11
+    variableFloat  = 1.0
+```    
 Anything that is included in the metadata file but is not intended to be read into converter.py as code (in other words, anything useful to have but that is not inlcluded by default should be commented out with a pound (#), per Python convention
->  Ex:
+```
+  Ex:
+    # this line is commented out
+```
+## Metadata Critical Fields
+The following fields must exist in the metadata file, and must have a meaningful value from the list of possible values for each:
 
->    \# this line is commented out
+#### dataFormat = "PlusCross"
+This field explains what format strain data was saved in.
 
-## Metadata Essential Fields ##
+Possible values: PlusCross, MagArg
 
-dataFormat = "PlusCross"
-timeFormat = "Msun"
-strainFormat = "rhOverM"
+#### timeFormat = "Msun"
+#### strainFormat = "rhOverM"
