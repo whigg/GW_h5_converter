@@ -23,9 +23,12 @@ Anything that is included in the metadata file but is not intended to be read in
 The following fields must exist in the metadata file, and must have a meaningful value from the list of possible values for each:
 
 #### dataFormat = "PlusCross"
-This field explains what format strain data was saved in.
-
-Possible values: PlusCross, MagArg
-
+This field explains what format strain data was saved in. **Possible values:** 
+```
+PlusCross - data columns two and three in original data file represent 
+  two strain values, along opposite directions
+MagArg - data column two in original file represents strain magnitude
+  (amplitude); column three represents argument (angle)
+```
 #### timeFormat = "Msun"
 #### strainFormat = "rhOverM"
