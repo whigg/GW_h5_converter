@@ -44,6 +44,17 @@ s       - Seconds.
 #### strainFormat = "rhOverM"
 This field idenitfies the units that were used to express the magnitude of strain values. If dataFormat is PlusCross and strainFormat is anything other than rhOverM, columns 1 and 2 of data file will be converted to rhOverM. If dataFormat is MagArg, only column 2 will be converted. **Possible Values:**
 ```
-rhOverM - 
-rh      - 
+rhOverM - Strain value, multiplied by observer distance (I believe?) and divided by system mass
+rh      - Strain value, multiplied by observer distance (I think)
 ```
+#### massFormat = "Msun"
+
+
+#### grav_mass1 = 1.528
+Mass of object 1, in whatever units are defined by massFormat
+
+#### grav_mass2 = 1.222
+Mass of object 2, in whatever units are defined by massFormat
+
+#### l = 2
+#### m = 2
