@@ -48,13 +48,44 @@ rhOverM - Strain value, multiplied by observer distance (I believe?) and divided
 rh      - Strain value, multiplied by observer distance (I think)
 ```
 #### massFormat = "Msun"
-
-
+Indicates which units were used to save numerical data for the mass of each stellar body. **Possible values:**
+```
+Msun     - solar units. 1 Msun is the mass of one Sol
+Mtotal   - Units as a fraction of mass of binary system, in units of Msun
+           Ex: If mass of binary system is 2.5 Sols, then 1 Msun in mass would be .4 Mtotal
+```
 #### grav_mass1 = 1.528
 Mass of object 1, in whatever units are defined by massFormat
 
 #### grav_mass2 = 1.222
 Mass of object 2, in whatever units are defined by massFormat
 
+#### total_grav_mass = 2.75
+Total mass of the system, i.e. the sum of grav_mass1 and grav_mass2. This field is only necessary if any data was saved in the Mtotal format (if in any other format, the total mass of the system will be calculated automatically by adding grav_mass1 and 2) 
+
 #### l = 2
 #### m = 2
+
+## Metadata Essential Fields
+These fields must be included in the metadata.txt file, but do not directly play a role in the proper formatting of the file. If necessary, values of 0 can be falsely inserted into these fields in the absense of real data
+```
+# spinning values per stellar body, broken into x/y/z vectors
+spin1x = 0.0 
+spin1y = 0.0 
+spin1z = 0.0 
+spin2x = 0.0 
+spin2y = 0.0 
+spin2z = 0.0
+
+# alternative mass formats
+ADM_mass1 = 0
+ADM_mass2 = 0
+total_ADM_mass = 0
+Baryon_mass1 = 0
+Baryon_mass2 = 0
+total_Baryon_mass = 0
+
+# tidal paramer per stellar body
+lambda_1 = 0
+lambda_2 = 0
+```
