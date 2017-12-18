@@ -1,9 +1,10 @@
 # [metadata.txt]
-# this version of metadata.txt is a test for running our automated h5_converter script
+# example metadata file for running conversion script
 
 # simulation-type = BNS
 # mass-scale = 1
 
+# essentials; MUST be included for script to work
 dataFormat = "PlusCross"
 timeFormat = "Msun"
 strainFormat = "rhOverM"
@@ -12,15 +13,20 @@ strainFormat = "rhOverM"
 # Use convention that body 1 is larger NS in NSNS 
 massFormat = "Msun"
 
-# calculate mass-ratio from mass specification as needed 
-# to avoid issues of convention conflict 
+# spin rates of spinning stellar bodies in x/y/z directions, where a value of 1 
+# represents the theoretical fastest spin a stellar object can have. values less than
+# 1 represent the stellar body's spin velocity as a percentage of the max
 spin1x = 0.0 
 spin1y = 0.0 
 spin1z = 0.0 
 spin2x = 0.0 
 spin2y = 0.0 
 spin2z = 0.0
-    
+
+# track several different ways to calculate mass, since some are particularly relevant 
+# to some researchers while others aren't.
+# the only one that are absolutely necessary to run the script are grav_mass_1 and _2
+# and total_grav_mass
 ADM_mass1 = 0
 ADM_mass2 = 0
 total_ADM_mass = 0
@@ -30,46 +36,12 @@ total_Baryon_mass = 0
 grav_mass1 = 1.528
 grav_mass2 = 1.222
 total_grav_mass = 2.75
+
+# tidal parameters for neutron stars, since neutron stars "matter"
+# this field is only relevant when one or both of the staller bodies are neutron stars
 lambda_1 = 0
 lambda_2 = 0
 
+# observer orientation (I think)
 l = 2
 m = 2
-
-# Binary:
-# M = 1.527790e+00 + 1.222231e+00 = 2.750021e+00
-# Mirr = 1.222221e+00 + 1.527778e+00 = 2.749999e+00
-# MADM = 2.728212e+00
-# JADM = 7.955561e+00
-# M w22 = 3.573707e-02
-# kT = 1.274755e+02
-# kT = 3.363462e+02
-# kT = 1.198322e+03
-
-# single star properties (SGRID):
-# MbA = 1.707041e+00
-# MbB = 1.334040e+00
-# MA = 1.527790e+00
-# MB = 1.222231e+00
-# SA = 0.000000e+00
-# SB = 0.000000e+00
-# chiA = 0.000000e+00
-# chiB = 0.000000e+00
-
-# irrotational (matlab):
-# MA = 1.222221e+00
-# MB = 1.527778e+00
-# CA = 1.473056e-01
-# CB = 1.817377e-01
-# RA = 8.297182e+00
-# RB = 8.406502e+00
-# kA = 1.347125e-01 3.945967e-02 1.562609e-02
-# kB = 1.013114e-01 2.801528e-02 1.042746e-02
-
-# grid parameters:
-# level  = 1
-# levelm = 0
-# nxyz   = 0
-# nmxyz  = 0
-# dxyz   = NaN
-# resu   = NaN
